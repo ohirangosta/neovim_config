@@ -58,6 +58,7 @@ if dein#load_state('/Users/shuji-oh/.cache/dein')
   call dein#add('scrooloose/nerdtree')
   call dein#add('tpope/vim-fugitive')
   call dein#add('vim-airline/vim-airline')
+  call dein#add('Shougo/deoplete.nvim')
   " Required:
   call dein#end()
   call dein#save_state()
@@ -181,3 +182,7 @@ let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#ale#error_symbol = 'E:'
 let g:airline#extensions#ale#warning_symbol = 'W:'
+
+" ### deoplete ###
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_completion_start_length = 1
