@@ -35,6 +35,20 @@ vnoremap <C-p> 20k
 
 inoremap <silent> jj <ESC>:<C-u>w<CR>
 
+"ウィンドウ移動に使用するのでsの元の機能を削除(ci)
+nnoremap s <Nop>
+"s + hjkl でウィンドウ間を移動
+nnoremap sh <C-w>h
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sw <C-w>w
+"ウィンドウそのものを移動
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
