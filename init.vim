@@ -143,7 +143,7 @@ call denite#custom#option('default', 'prompt', '>')
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 
 " 表示幅
-let g:NERDTreeWinSize=25
+let g:NERDTreeWinSize=20
 
 " ブックマークを表示
 let g:NERDTreeShowBookmarks=1
@@ -200,3 +200,7 @@ let g:airline#extensions#ale#warning_symbol = 'W:'
 " ### deoplete ###
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_completion_start_length = 1
+
+" ### colorsheme ###
+syntax enable
+colorscheme molokai
