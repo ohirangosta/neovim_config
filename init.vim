@@ -3,6 +3,13 @@ set number
 set hlsearch
 set ruler
 
+set tabstop=4       
+set shiftwidth=4    
+set softtabstop=0   
+set expandtab       
+set smarttab        
+set shiftround
+
 set ignorecase
 set smartcase
 set wrapscan
@@ -55,15 +62,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/shuji-oh/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/rangosta/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/shuji-oh/.cache/dein')
-  call dein#begin('/Users/shuji-oh/.cache/dein')
+if dein#load_state('/Users/rangosta/.cache/dein')
+  call dein#begin('/Users/rangosta/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/shuji-oh/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/rangosta/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   call dein#add('Shougo/neosnippet.vim')
@@ -73,6 +80,7 @@ if dein#load_state('/Users/shuji-oh/.cache/dein')
   call dein#add('tpope/vim-fugitive')
   call dein#add('vim-airline/vim-airline')
   call dein#add('Shougo/deoplete.nvim')
+
   " Required:
   call dein#end()
   call dein#save_state()
