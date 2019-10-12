@@ -79,12 +79,13 @@ if dein#load_state('/Users/rangosta/.cache/dein')
   " Add or remove your plugins here like this:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('Shougo/denite.nvim')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('kana/vim-submode')
+  call dein#add('Shougo/denite.nvim')           " 検索
+  call dein#add('scrooloose/nerdtree')          " C-eで，ディレクトリ表示
+  call dein#add('tpope/vim-fugitive')           " git操作
+  call dein#add('vim-airline/vim-airline')      " cool status bar
+  call dein#add('Shougo/deoplete.nvim')         " 単語補間
+  call dein#add('kana/vim-submode')             " s<,s>,s+,s-で，分割画面の大きさ調整
+  call dein#add('kassio/neoterm')               " C-tで，terminal表示
 
   " Required:
   call dein#end()
@@ -228,3 +229,8 @@ call submode#map('bufmove', 'n', '', '>', '<C-w>>')
 call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
+" ### neoterm ###
+let g:neoterm_default_mod='vertical'
+nnoremap <C-t> :Ttoggle<CR>
+tnoremap <C-t> <C-¥><C-n>:Ttoggle<CR>
