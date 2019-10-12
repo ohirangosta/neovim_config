@@ -56,6 +56,10 @@ nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 
+" sh
+set sh=fish
+tnoremap <silent> <ESC> <C-\><C-n>
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -80,6 +84,7 @@ if dein#load_state('/Users/rangosta/.cache/dein')
   call dein#add('tpope/vim-fugitive')
   call dein#add('vim-airline/vim-airline')
   call dein#add('Shougo/deoplete.nvim')
+  call dein#add('kana/vim-submode')
 
   " Required:
   call dein#end()
@@ -128,6 +133,7 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
 " ディレクトリ一覧
 noremap [denite]<C-d> :<C-u>Denite directory_rec<CR>
 noremap [denite]<C-c> :<C-u>Denite directory_rec -default-action=cd<CR>
+noremap [denite]<C-f> :<C-u>Denite line<CR>
 
 " 移動
 call denite#custom#map('normal', 'j', '<denite:nop>', 'noremap')
@@ -164,7 +170,7 @@ let g:NERDTreeMapOpenSplit='<C-j>'
 let g:NERDTreeMapOpenVSplit='<C-l>'
 
 " ファイルを開いたらNERDTreeを閉じる
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=0
 
 " 隠しファイルを表示
 let g:NERDTreeShowHidden=1
@@ -212,3 +218,13 @@ let g:deoplete#auto_completion_start_length = 1
 " ### colorsheme ###
 syntax enable
 colorscheme molokai
+
+" ### submode ###
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
