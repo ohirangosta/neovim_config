@@ -66,15 +66,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/rangosta/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/shuji-oh/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/rangosta/.cache/dein')
-  call dein#begin('/Users/rangosta/.cache/dein')
+if dein#load_state('/Users/shuji-oh/.cache/dein')
+  call dein#begin('/Users/shuji-oh/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/rangosta/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/shuji-oh/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   call dein#add('Shougo/neosnippet.vim')
@@ -86,6 +86,7 @@ if dein#load_state('/Users/rangosta/.cache/dein')
   call dein#add('Shougo/deoplete.nvim')         " 単語補間
   call dein#add('kana/vim-submode')             " s<,s>,s+,s-で，分割画面の大きさ調整
   call dein#add('kassio/neoterm')               " C-tで，terminal表示
+  call dein#add('ludovicchabant/vim-gutentags') " 定義へジャンプ
 
   " Required:
   call dein#end()
@@ -234,3 +235,12 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 let g:neoterm_default_mod='vertical'
 nnoremap <C-t> :Ttoggle<CR>
 tnoremap <C-t> <C-¥><C-n>:Ttoggle<CR>
+
+" ### vim-gutentags ###
+let g:gutentags_project_root = ['.git', '.project']
+let g:gutentags_ctags_tagfile = '.tags'
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
