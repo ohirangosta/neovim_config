@@ -1,4 +1,5 @@
 let g:python3_host_prog = expand('/usr/local/bin/python3')
+let mapleader = "\<Space>"
 set number
 set hlsearch
 set ruler
@@ -27,6 +28,10 @@ nnoremap <Bar> $:let pos = getpos(".")<CR>:join<CR>:call setpos('.', pos)<CR>
 " nnoremap <C-j> <C-w>j
 " nnoremap <C-k> <C-w>k
 " nnoremap <C-l> <C-w>l
+
+" Buffer間の移動
+nnoremap <leader>p :bprevious<CR>
+nnoremap <leader>n :bnext<CR>
 
 " 折り返し行移動
 nnoremap j gj
@@ -86,7 +91,7 @@ if dein#load_state('/Users/shuji-oh/.cache/dein')
   call dein#add('Shougo/deoplete.nvim')         " 単語補間
   call dein#add('kana/vim-submode')             " s<,s>,s+,s-で，分割画面の大きさ調整
   call dein#add('kassio/neoterm')               " C-tで，terminal表示
-  call dein#add('ludovicchabant/vim-gutentags') " 定義へジャンプ
+  call dein#add('davidhalter/jedi-vim')         " 定義ジャンプ
 
   " Required:
   call dein#end()
@@ -236,11 +241,5 @@ let g:neoterm_default_mod='vertical'
 nnoremap <C-t> :Ttoggle<CR>
 tnoremap <C-t> <C-¥><C-n>:Ttoggle<CR>
 
-" ### vim-gutentags ###
-let g:gutentags_project_root = ['.git', '.project']
-let g:gutentags_ctags_tagfile = '.tags'
-let s:vim_tags = expand('~/.cache/tags')
-let g:gutentags_cache_dir = s:vim_tags
-if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
-endif
+" ### jedi-vim ###
+let g:jedi#usages_command = "<leader>u"
